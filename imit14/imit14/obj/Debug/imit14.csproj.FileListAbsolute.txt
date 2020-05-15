@@ -1,0 +1,10 @@
+C:\imits\imit14\imit14\imit14\bin\Debug\imit14.exe.config
+C:\imits\imit14\imit14\imit14\bin\Debug\imit14.exe
+C:\imits\imit14\imit14\imit14\bin\Debug\imit14.pdb
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.csprojAssemblyReference.cache
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.Form1.resources
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.Properties.Resources.resources
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.csproj.GenerateResource.cache
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.csproj.CoreCompileInputs.cache
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.exe
+C:\imits\imit14\imit14\imit14\obj\Debug\imit14.pdb
