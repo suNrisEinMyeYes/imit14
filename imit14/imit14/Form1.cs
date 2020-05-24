@@ -73,7 +73,7 @@ namespace imit14
                         statistic[j]++;
                         break;
                     }
-                    k += 0.2f;
+                    k += 0.125f;
                 }
             }
             o = 0;
@@ -82,7 +82,7 @@ namespace imit14
                 
                 Freq[i] = statistic[i] / ((float)NumExp.Value);
                 chart1.Series[0].Points.AddXY(o, Freq[i]);
-                o += 0.2f;
+                o += 0.125f;
             }
 
             M = Sum / (float)NumExp.Value;
