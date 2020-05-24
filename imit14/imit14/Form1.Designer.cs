@@ -28,96 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.FirstMethodBtn = new System.Windows.Forms.Button();
-            this.SecondMethodBtn = new System.Windows.Forms.Button();
-            this.ThirdMethodBtn = new System.Windows.Forms.Button();
-            this.Mean = new System.Windows.Forms.NumericUpDown();
-            this.Var = new System.Windows.Forms.NumericUpDown();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.StartBtn = new System.Windows.Forms.Button();
             this.NumExp = new System.Windows.Forms.NumericUpDown();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.StatPanel = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.AverageLbl = new System.Windows.Forms.Label();
             this.VarianceLbl = new System.Windows.Forms.Label();
-            this.Chi1Lbl = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Mean)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Var)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AVTvalue = new System.Windows.Forms.NumericUpDown();
+            this.VarTvalue = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.StatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AVTvalue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VarTvalue)).BeginInit();
             this.SuspendLayout();
             // 
-            // FirstMethodBtn
+            // StartBtn
             // 
-            this.FirstMethodBtn.Location = new System.Drawing.Point(16, 157);
-            this.FirstMethodBtn.Name = "FirstMethodBtn";
-            this.FirstMethodBtn.Size = new System.Drawing.Size(75, 23);
-            this.FirstMethodBtn.TabIndex = 0;
-            this.FirstMethodBtn.Text = "Method1";
-            this.FirstMethodBtn.UseVisualStyleBackColor = true;
-            this.FirstMethodBtn.Click += new System.EventHandler(this.FirstMethodBtn_Click);
-            // 
-            // SecondMethodBtn
-            // 
-            this.SecondMethodBtn.Location = new System.Drawing.Point(16, 212);
-            this.SecondMethodBtn.Name = "SecondMethodBtn";
-            this.SecondMethodBtn.Size = new System.Drawing.Size(75, 23);
-            this.SecondMethodBtn.TabIndex = 1;
-            this.SecondMethodBtn.Text = "Method2";
-            this.SecondMethodBtn.UseVisualStyleBackColor = true;
-            this.SecondMethodBtn.Click += new System.EventHandler(this.SecondMethodBtn_Click);
-            // 
-            // ThirdMethodBtn
-            // 
-            this.ThirdMethodBtn.Location = new System.Drawing.Point(16, 261);
-            this.ThirdMethodBtn.Name = "ThirdMethodBtn";
-            this.ThirdMethodBtn.Size = new System.Drawing.Size(75, 23);
-            this.ThirdMethodBtn.TabIndex = 2;
-            this.ThirdMethodBtn.Text = "Method3";
-            this.ThirdMethodBtn.UseVisualStyleBackColor = true;
-            this.ThirdMethodBtn.Click += new System.EventHandler(this.ThirdMethodBtn_Click);
-            // 
-            // Mean
-            // 
-            this.Mean.Location = new System.Drawing.Point(90, 12);
-            this.Mean.Name = "Mean";
-            this.Mean.Size = new System.Drawing.Size(85, 20);
-            this.Mean.TabIndex = 3;
-            // 
-            // Var
-            // 
-            this.Var.Location = new System.Drawing.Point(90, 47);
-            this.Var.Name = "Var";
-            this.Var.Size = new System.Drawing.Size(85, 20);
-            this.Var.TabIndex = 4;
+            this.StartBtn.Location = new System.Drawing.Point(17, 211);
+            this.StartBtn.Name = "StartBtn";
+            this.StartBtn.Size = new System.Drawing.Size(75, 23);
+            this.StartBtn.TabIndex = 0;
+            this.StartBtn.Text = "Start";
+            this.StartBtn.UseVisualStyleBackColor = true;
+            this.StartBtn.Click += new System.EventHandler(this.FirstMethodBtn_Click);
             // 
             // NumExp
             // 
-            this.NumExp.Location = new System.Drawing.Point(112, 95);
+            this.NumExp.Location = new System.Drawing.Point(113, 149);
             this.NumExp.Name = "NumExp";
             this.NumExp.Size = new System.Drawing.Size(79, 20);
             this.NumExp.TabIndex = 5;
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(197, 12);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(309, 12);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(601, 354);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
@@ -127,23 +91,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Average";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Variance";
+            this.label1.Text = "Param \"k\"";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 97);
+            this.label3.Location = new System.Drawing.Point(3, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 9;
@@ -155,8 +110,6 @@
             this.StatPanel.Controls.Add(this.label6);
             this.StatPanel.Controls.Add(this.AverageLbl);
             this.StatPanel.Controls.Add(this.VarianceLbl);
-            this.StatPanel.Controls.Add(this.Chi1Lbl);
-            this.StatPanel.Controls.Add(this.label14);
             this.StatPanel.Location = new System.Drawing.Point(197, 404);
             this.StatPanel.Name = "StatPanel";
             this.StatPanel.Size = new System.Drawing.Size(601, 151);
@@ -202,50 +155,70 @@
             this.VarianceLbl.TabIndex = 16;
             this.VarianceLbl.Text = "0";
             // 
-            // Chi1Lbl
+            // textBox1
             // 
-            this.Chi1Lbl.AutoSize = true;
-            this.Chi1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Chi1Lbl.Location = new System.Drawing.Point(142, 117);
-            this.Chi1Lbl.Name = "Chi1Lbl";
-            this.Chi1Lbl.Size = new System.Drawing.Size(18, 20);
-            this.Chi1Lbl.TabIndex = 22;
-            this.Chi1Lbl.Text = "0";
+            this.textBox1.Location = new System.Drawing.Point(113, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(79, 20);
+            this.textBox1.TabIndex = 34;
             // 
-            // label14
+            // label2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(15, 117);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(102, 20);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Chi-Squared:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Average Theoretical";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Variance Theoretical";
+            // 
+            // AVTvalue
+            // 
+            this.AVTvalue.Location = new System.Drawing.Point(136, 56);
+            this.AVTvalue.Name = "AVTvalue";
+            this.AVTvalue.Size = new System.Drawing.Size(85, 20);
+            this.AVTvalue.TabIndex = 32;
+            // 
+            // VarTvalue
+            // 
+            this.VarTvalue.Location = new System.Drawing.Point(136, 96);
+            this.VarTvalue.Name = "VarTvalue";
+            this.VarTvalue.Size = new System.Drawing.Size(85, 20);
+            this.VarTvalue.TabIndex = 33;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 583);
+            this.ClientSize = new System.Drawing.Size(1020, 583);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.VarTvalue);
+            this.Controls.Add(this.AVTvalue);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.StatPanel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.NumExp);
-            this.Controls.Add(this.Var);
-            this.Controls.Add(this.Mean);
-            this.Controls.Add(this.ThirdMethodBtn);
-            this.Controls.Add(this.SecondMethodBtn);
-            this.Controls.Add(this.FirstMethodBtn);
+            this.Controls.Add(this.StartBtn);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.Mean)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Var)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumExp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.StatPanel.ResumeLayout(false);
             this.StatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AVTvalue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VarTvalue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,23 +226,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button FirstMethodBtn;
-        private System.Windows.Forms.Button SecondMethodBtn;
-        private System.Windows.Forms.Button ThirdMethodBtn;
-        private System.Windows.Forms.NumericUpDown Mean;
-        private System.Windows.Forms.NumericUpDown Var;
+        private System.Windows.Forms.Button StartBtn;
         private System.Windows.Forms.NumericUpDown NumExp;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel StatPanel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label AverageLbl;
         private System.Windows.Forms.Label VarianceLbl;
-        private System.Windows.Forms.Label Chi1Lbl;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown AVTvalue;
+        private System.Windows.Forms.NumericUpDown VarTvalue;
     }
 }
 

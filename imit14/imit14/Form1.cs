@@ -7,205 +7,106 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace imit14
 {
     public partial class Form1 : Form
     {
-        FirstMethod fm;
 
-        SecondMethod sm;
-
-        ThirdMethod tm;
-
+        Random rnd;
         Density pl;
+
+        float o = 0;
 
         int[] statistic = new int[8];
 
-        double A, Sum, kvadraA, Chi, a;
+        double  Chi, a;
 
-        decimal[] Freq = new decimal[8];
+        float[] Freq = new float[8];
 
-        decimal MT, M, MErr, DT, D, DErr;
+        float M, MErr, D, DErr, k_param, Sum, A, powA;
 
-        int k = -4;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        float k = 0;
 
         public Form1()
         {
             InitializeComponent();
+            rnd = new Random();
+            chart1.ChartAreas[0].AxisX.Maximum = 1;
+
+
         }
 
         private void FirstMethodBtn_Click(object sender, EventArgs e)
         {
-            M = 0; D = 0; Chi = 0; Sum = 0; kvadraA = 0; a = -3.5;
-
+            M = 0; D = 0; Chi = 0; Sum = 0; powA = 0; a = -3.5;
+            pl = new Density(AVTvalue.Value, VarTvalue.Value);
             chart1.Series[0].Points.Clear();
             for (int i = 0; i < 8; i++)
             {
                 statistic[i] = 0;
+                Freq[i] = 0;
             }
 
-            MT = Mean.Value;
-            DT = Var.Value;
-
-            fm = new FirstMethod(MT, DT);
-            pl = new Density(MT, DT);
-
-            for (int i = 0; i < NumExp.Value; i++)
-            {
-                A = fm.getNum();
-                Sum = Sum + A;
-                kvadraA = kvadraA + A * A;
-                k = -4;
-                for (int j = 0; j < 8; j++)
-                {
-                    if (A < k + 1 && A > k)
-                    {
-                        statistic[j]++;
-                        break;
-                    }
-                    k++;
-                }
-            }
-
-            for (int j = 0; j < 8; j++)
-            {
-                Freq[j] = statistic[j] / NumExp.Value;
-                chart1.Series[0].Points.AddXY(j, Freq[j]);
-            }
-
-            M = (decimal)Sum / NumExp.Value;
-            D = (decimal)kvadraA / NumExp.Value - M * M;
-
-            ChiCounter();
-
-            errorCounter();
-
-            writer();
-        }
-
-        private void SecondMethodBtn_Click(object sender, EventArgs e)
-        {
-            M = 0; D = 0; Chi = 0; Sum = 0; kvadraA = 0; a = -3.5;
-
-            chart1.Series[0].Points.Clear();
-            for (int i = 0; i < 8; i++)
-            {
-                statistic[i] = 0;
-            }
-
-            MT = Mean.Value;
-            DT = Var.Value;
-
-            sm = new SecondMethod(MT, DT);
-            pl = new Density(MT, DT);
-            for (int i = 0; i < NumExp.Value; i++)
-            {
-                A = sm.getNum();
-                Sum = Sum + A;
-                kvadraA = kvadraA + A * A;
-                k = -4;
-                for (int j = 0; j < 8; j++)
-                {
-                    if (A < k + 1 && A > k)
-                    {
-                        statistic[j]++;
-                        break;
-                    }
-                    k++;
-                }
-            }
-            for (int j = 0; j < 8; j++)
-            {
-                Freq[j] = statistic[j] / NumExp.Value;
-                chart1.Series[0].Points.AddXY(j, Freq[j]);
-            }
-
-            M = (decimal)Sum / NumExp.Value;
-            D = (decimal)kvadraA / NumExp.Value - M * M;
-
-            ChiCounter();
-
-            errorCounter();
-
-            writer();
-        }
-
-        private void ThirdMethodBtn_Click(object sender, EventArgs e)
-        {
-            M = 0; D = 0; Chi = 0; Sum = 0; kvadraA = 0; a = -3.5;
-            chart1.Series[0].Points.Clear();
-            for (int i = 0; i < 8; i++)
-            {
-                statistic[i] = 0;
-            }
-
-            MT = Mean.Value;
-            DT = Var.Value;
-
-            tm = new ThirdMethod(MT, DT);
-            pl = new Density(MT, DT);
-
-            for (int i = 0; i < NumExp.Value; i++)
-            {
-                A = tm.getNum();
-                Sum = Sum + A;
-                kvadraA = kvadraA + A * A;
-                k = -4;
-                for (int j = 0; j < 8; j++)
-                {
-                    if (A < k + 1 && A > k)
-                    {
-                        statistic[j]++;
-                        break;
-                    }
-                    k++;
-                }
-            }
-
-            for (int j = 0; j < 8; j++)
-            {
-                Freq[j] = statistic[j] / NumExp.Value;
-                chart1.Series[0].Points.AddXY(j, Freq[j]);
-            }
-
-            M = (decimal)Sum / NumExp.Value;
-
-            D = (decimal)kvadraA / NumExp.Value - M * M;
-
-            ChiCounter();
-            errorCounter();
-
-            writer();
+            k_param = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
             
+
+            
+
+            for (int i = 0; i < NumExp.Value; i++)
+            {
+
+                A = Gamma();
+                Sum = Sum + A;
+                powA += A * A;
+                k = 0;
+                for (int j = 0; j < 8; j++)
+                {
+                    if (A < k + 0.2 && A > k)
+                    {
+                        statistic[j]++;
+                        break;
+                    }
+                    k += 0.2f;
+                }
+            }
+            o = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                
+                Freq[i] = statistic[i] / ((float)NumExp.Value);
+                chart1.Series[0].Points.AddXY(o, Freq[i]);
+                o += 0.2f;
+            }
+
+            M = Sum / (float)NumExp.Value;
+            D = powA / (float)NumExp.Value - M * M;
+
+            ChiCounter();
+
+            
+
+            writer();
         }
+
+        
 
        
 
         void writer()
         {
-            AverageLbl.Text = "Average: " + M + " (error = " + Math.Round(MErr * 100, 5) + "%)";
-            VarianceLbl.Text = "Variance: " + D + " (error = " + Math.Round(DErr * 100, 5) + "%)";
-            if (Chi > 15.507)
-            {
-                Chi1Lbl.Text = "Chi-squared: " + Chi + " > 15.507 is true";
-            }
-            else { Chi1Lbl.Text = "Chi-squared: " + Chi + " > 15.507 is false"; }
+            AverageLbl.Text = "Average: " + M;
+            VarianceLbl.Text = "Variance: " + D;
+            
         }
 
-        void errorCounter()
-        {
-            if (MT != 0)
-            {
-                MErr = Math.Abs(M - MT) / MT;
-            }
-            else { MErr = 0; }
-            if (DT != 0)
-            {
-                DErr = Math.Abs(D - DT) / DT;
-            }
-            else { DErr = 0; }
-        }
+        
 
         void ChiCounter()
         {
@@ -216,6 +117,24 @@ namespace imit14
                 a++;
             }
             Chi = Chi - (double)NumExp.Value;
+        }
+
+        float Gamma()
+        {
+            const double e = 2.718;
+            double k = (float)rnd.NextDouble();
+            double Density = e / (e + k), a = 1 / k, Alfa_1, Alfa_2, Beta, Teta;
+            double d = Density / (1 - Density);
+            do
+            {
+                Alfa_1 = (float)rnd.NextDouble();
+                Alfa_2 = (float)rnd.NextDouble();
+                Beta = Alfa_1 / Density;
+                Teta = Beta < 1 ? Beta * a : (float)(-Math.Log(d * (Beta - 1)));
+                
+            } while (Teta <1 && Math.Exp(-Teta)<Alfa_2 || Teta>=1 && Teta * (k-1)<Alfa_2);
+            Console.WriteLine(Teta);
+            return (float)Teta;
         }
     }
 }
