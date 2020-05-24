@@ -21,7 +21,7 @@ namespace imit14
 
         int[] statistic = new int[8];
 
-        double  Chi, a;
+        double  a;
 
         float[] Freq = new float[8];
 
@@ -45,7 +45,7 @@ namespace imit14
 
         private void FirstMethodBtn_Click(object sender, EventArgs e)
         {
-            M = 0; D = 0; Chi = 0; Sum = 0; powA = 0; a = -3.5;
+            M = 0; D = 0; Sum = 0; powA = 0; a = -3.5;
             
             chart1.Series[0].Points.Clear();
             for (int i = 0; i < 8; i++)
@@ -111,18 +111,18 @@ namespace imit14
         float Gamma()
         {
             const double e = 2.718;
-            double k = (float)rnd.NextDouble();
+            double k = rnd.NextDouble();
             double Density = e / (e + k), a = 1 / k, Alfa_1, Alfa_2, Beta, Teta;
             double d = Density / (1 - Density);
             do
             {
-                Alfa_1 = (float)rnd.NextDouble();
-                Alfa_2 = (float)rnd.NextDouble();
+                Alfa_1 = rnd.NextDouble();
+                Alfa_2 = rnd.NextDouble();
                 Beta = Alfa_1 / Density;
-                Teta = Beta < 1 ? Beta * a : (float)(-Math.Log(d * (Beta - 1)));
+                Teta = Beta < 1 ? Beta * a : (-Math.Log(d * (Beta - 1)));
                 
             } while (Teta <1 && Math.Exp(-Teta)<Alfa_2 || Teta>=1 && Teta * (k-1)<Alfa_2);
-            Console.WriteLine(Teta);
+            
             return (float)Teta;
         }
     }
