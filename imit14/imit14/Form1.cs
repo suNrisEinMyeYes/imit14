@@ -15,7 +15,7 @@ namespace imit14
     {
 
         Random rnd;
-        Density pl;
+       
 
         float o = 0;
 
@@ -46,7 +46,7 @@ namespace imit14
         private void FirstMethodBtn_Click(object sender, EventArgs e)
         {
             M = 0; D = 0; Chi = 0; Sum = 0; powA = 0; a = -3.5;
-            pl = new Density(AVTvalue.Value, VarTvalue.Value);
+            
             chart1.Series[0].Points.Clear();
             for (int i = 0; i < 8; i++)
             {
@@ -88,9 +88,7 @@ namespace imit14
             M = Sum / (float)NumExp.Value;
             D = powA / (float)NumExp.Value - M * M;
 
-            ChiCounter();
-
-            
+                   
 
             writer();
         }
@@ -108,16 +106,7 @@ namespace imit14
 
         
 
-        void ChiCounter()
-        {
-            for (int j = 0; j < 8; j++)
-            {
-
-                Chi = Chi + ((statistic[j] * statistic[j]) / ((double)NumExp.Value * pl.getP(a)));
-                a++;
-            }
-            Chi = Chi - (double)NumExp.Value;
-        }
+        
 
         float Gamma()
         {

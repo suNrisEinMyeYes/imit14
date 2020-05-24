@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.StartBtn = new System.Windows.Forms.Button();
             this.NumExp = new System.Windows.Forms.NumericUpDown();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -42,15 +42,9 @@
             this.AverageLbl = new System.Windows.Forms.Label();
             this.VarianceLbl = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.AVTvalue = new System.Windows.Forms.NumericUpDown();
-            this.VarTvalue = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.StatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AVTvalue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VarTvalue)).BeginInit();
             this.SuspendLayout();
             // 
             // StartBtn
@@ -72,16 +66,16 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(309, 12);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(601, 354);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
@@ -162,48 +156,12 @@
             this.textBox1.Size = new System.Drawing.Size(79, 20);
             this.textBox1.TabIndex = 34;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Average Theoretical";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Variance Theoretical";
-            // 
-            // AVTvalue
-            // 
-            this.AVTvalue.Location = new System.Drawing.Point(136, 56);
-            this.AVTvalue.Name = "AVTvalue";
-            this.AVTvalue.Size = new System.Drawing.Size(85, 20);
-            this.AVTvalue.TabIndex = 32;
-            // 
-            // VarTvalue
-            // 
-            this.VarTvalue.Location = new System.Drawing.Point(136, 96);
-            this.VarTvalue.Name = "VarTvalue";
-            this.VarTvalue.Size = new System.Drawing.Size(85, 20);
-            this.VarTvalue.TabIndex = 33;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 583);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.VarTvalue);
-            this.Controls.Add(this.AVTvalue);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.StatPanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -217,8 +175,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.StatPanel.ResumeLayout(false);
             this.StatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AVTvalue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VarTvalue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,10 +193,6 @@
         private System.Windows.Forms.Label AverageLbl;
         private System.Windows.Forms.Label VarianceLbl;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown AVTvalue;
-        private System.Windows.Forms.NumericUpDown VarTvalue;
     }
 }
 
