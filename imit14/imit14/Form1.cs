@@ -62,7 +62,7 @@ namespace imit14
             for (int i = 0; i < NumExp.Value; i++)
             {
 
-                A = Gamma();
+                A = Gamma(k_param);
                 Sum = Sum + A;
                 powA += A * A;
                 k = 0;
@@ -108,11 +108,11 @@ namespace imit14
 
         
 
-        float Gamma()
+        float Gamma(double k_param)
         {
             const double e = 2.718;
-            double k = rnd.NextDouble();
-            double Density = e / (e + k), a = 1 / k, Alfa_1, Alfa_2, Beta, Teta;
+            
+            double Density = e / (e + k_param), a = 1 / k_param, Alfa_1, Alfa_2, Beta, Teta;
             double d = Density / (1 - Density);
             do
             {
@@ -121,7 +121,7 @@ namespace imit14
                 Beta = Alfa_1 / Density;
                 Teta = Beta < 1 ? Beta * a : (-Math.Log(d * (Beta - 1)));
                 
-            } while (Teta <1 && Math.Exp(-Teta)<Alfa_2 || Teta>=1 && Teta * (k-1)<Alfa_2);
+            } while (Teta <1 && Math.Exp(-Teta)<Alfa_2 || Teta>=1 && Teta * (k_param - 1)<Alfa_2);
             
             return (float)Teta;
         }
